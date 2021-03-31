@@ -75,9 +75,9 @@ def main(epoch_num=10,learning_rate = 0.01):
                 total += labels.size(0)
                 correct += (outputs == targets.cuda()).sum().item()
                 running_loss += loss.item()
-            if i % 2 == 0:    # print every 2000 mini-batches
+            if i % 100 == 0:    # print every 100 mini-batches
                 print('[%d, %5d] loss: %.3f' %
-                    (epoch + 1, i + 1, running_loss / 2000))
+                    (epoch + 1, i + 1, running_loss / 100))
                 print('Accuracy of the network : %d %%' % (
         100 * correct / total))
                 running_loss = 0.0
